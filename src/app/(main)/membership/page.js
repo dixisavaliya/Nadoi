@@ -1,12 +1,5 @@
-import React, { Suspense } from 'react';
-import Membership from './Membership';
+import Membership from "./Membership";
 
-export default function MembershipPage() {
-  return (
-    <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Membership />
-      </Suspense>
-    </>
-  );
+export default function Page() {
+    return <Membership />;
 }
