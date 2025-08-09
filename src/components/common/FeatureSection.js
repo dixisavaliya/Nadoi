@@ -40,19 +40,20 @@ export default function FeatureSection() {
         if (isHomepageVideoLoaded) return;
 
         try {
-            const response = await getData("config");
+            const response = await getData("config", true);
             if (response.success) {
                 const videoConfig = response.data.find(item => item.title === "youtube_url");
                 if (videoConfig?.value) {
                     setHomepageVideo(videoConfig.value);
                 }
-                setIsHomepageVideoLoaded(true);
             } else {
-                toast.error(response.message);
+                console.warn("No homepage video configuration found");
             }
         } catch (error) {
             console.error("Error fetching homepage video:", error);
-            toast.error(error.response?.message || "Something went wrong");
+            // Don't show toast error for this non-critical feature
+        } finally {
+            setIsHomepageVideoLoaded(true);
         }
     };
 
