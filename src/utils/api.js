@@ -31,13 +31,18 @@ export const getToken = () => {
 
 export const getData = async (path, isPublic = false) => {
     try {
+        if (!BaseUrl) {
+            throw new Error('API base URL is not configured');
+        }
         const headers = getHeaders(isPublic);
         const response = await axios.get(`${BaseUrl}/${path}`, {
             headers
         });
         return response.data;
     } catch (error) {
-        handleAuthError(error);
+        if (!isPublic) {
+            handleAuthError(error);
+        }
         throw error;
     }
 }
