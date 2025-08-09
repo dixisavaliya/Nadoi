@@ -59,15 +59,18 @@ export default function FeatureSection() {
 
     const fetchFeaturedMembers = async () => {
         try {
-            const response = await getData("config/featured-members");
+            const response = await getData("config/featured-members", true);
             if (response.success) {
                 setFeaturedMembers(response.data || []);
             } else {
-                toast.error(response.message);
+                console.warn("No featured members found");
+                // Use fallback data if API fails
+                setFeaturedMembers(members);
             }
         } catch (error) {
             console.error("Error fetching featured members:", error);
-            toast.error(error.response?.message || "Failed to load featured members");
+            // Use fallback data instead of showing error
+            setFeaturedMembers(members);
         }
     };
 
