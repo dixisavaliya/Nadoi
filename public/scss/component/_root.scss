@@ -1,0 +1,300 @@
+/* Common Css
+======================================================*/
+.transition,
+::before,
+::after,
+header,
+main,
+aside,
+footer {
+    @include prefix(transition, all 0.4s ease-in-out 0s);
+}
+
+.rounded-xxl {
+    @include prefix(border-radius, var(--bs-radius-xxl));
+}
+
+.rounded-xl {
+    @include prefix(border-radius, var(--bs-radius-xl));
+}
+
+.rounded-lg {
+    @include prefix(border-radius, var(--bs-radius-lg));
+}
+
+.rounded-md {
+    @include prefix(border-radius, var(--bs-radius-md));
+}
+
+.rounded-sm {
+    @include prefix(border-radius, var(--bs-radius-sm));
+}
+
+.rounded {
+    @include prefix(border-radius, var(--bs-radius));
+}
+
+.rounded-pill {
+    @include prefix(border-radius, 50rem);
+}
+
+.rounded-circle {
+    @include prefix(border-radius, 50%);
+}
+
+.rounded-0 {
+    @include prefix(border-radius, 0);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-gray-100 {
+    color: var(--bs-gray-100);
+}
+
+.bg-secondary-light {
+    background-color: var(--bs-secondary-100);
+}
+
+.bg-gray-200 {
+    background-color: var(--bs-gray-200);
+}
+
+.container {
+    --bs-gutter-x: 80px;
+
+    @include responsive(md) {
+        --bs-gutter-x: 40px;
+    }
+}
+
+.list {
+    li {
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--bs-black);
+            top: calc((var(--bs-line-height-h6) / 2) - 3px);
+
+            @extend .rounded-circle;
+        }
+    }
+}
+
+/* Icon
+======================================================*/
+.icon {
+    display: inline-block;
+    position: relative;
+
+    svg,
+    img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        margin: auto;
+        width: fit-content;
+        height: fit-content;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+/* Image
+======================================================*/
+.picture {
+    .image-horizontal & {
+        padding-top: 56%;
+    }
+
+    .image-vertical & {
+        padding-top: 150.12%;
+    }
+
+    .image-square & {
+        padding-top: 100%;
+    }
+}
+
+/* Link
+======================================================*/
+.link {
+    position: relative;
+    white-space: nowrap;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 90%;
+        left: 0px;
+        right: 0px;
+        height: 1px;
+        background-color: currentColor;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:hover {
+        &:before {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.link-underline {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        bottom: 2px;
+        right: 0px;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        left: 0;
+        -ms-transform: scaleY(1) scaleX(1);
+        transform: scaleY(1) scaleX(1);
+        transition: transform 0.4s cubic-bezier(0.5, 0, 0.1, 1), left 0s linear;
+    }
+
+    &:hover {
+        &::before {
+            left: 100%;
+            -ms-transform: scaleY(1) scaleX(0);
+            transform: scaleY(1) scaleX(0);
+            transition: left 0.4s cubic-bezier(0.5, 0, 0.1, 1),
+                transform 0s linear 0.4s;
+        }
+    }
+}
+
+/* Card
+======================================================*/
+.card {
+    @extend .border-0, .rounded-0;
+
+    .card-body {
+        @extend .p-4, .p-md-8;
+
+        .card-title {
+            @extend .fw-bold, .text-black, .mb-4, .mb-md-8;
+        }
+
+        ul {
+            @extend .h6, .fw-medium, .text-black;
+
+            li {
+                strong {
+                    font-weight: bold;
+                }
+
+                a {
+                    color: var(--bs-black);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .link-social {
+            a {
+                background-color: var(--bs-black);
+                color: var(--bs-secondary);
+
+                &:hover {
+                    background-color: var(--bs-secondary);
+                    color: var(--bs-white);
+                }
+            }
+        }
+    }
+}
+
+
+.pagination {
+    span {
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--bs-primary);
+        }
+    }
+}
+
+.step-item {
+    background-color: var(--bs-light);
+    height: 100%;
+
+    @extend .py-2, .py-md-6, .px-2, .px-sm-4, .px-md-2;
+
+    span {
+        font-size: var(--bs-font-size-h3);
+        line-height: var(--bs-line-height-h3);
+        width: calc(var(--bs-line-height-h3) + 16px);
+        height: calc(var(--bs-line-height-h3) + 16px);
+        font-weight: 600;
+        display: inline-block;
+        padding: 9px 8px 7px;
+
+        @extend .rounded-circle, .bg-dark, .text-white, .bg-opacity-10;
+    }
+
+    h6 {
+        font-weight: 600;
+        color: rgba($dark, 0.3);
+    }
+
+    &.active {
+        background-color: var(--bs-secondary-bg-subtle);
+
+        span {
+            @extend .bg-secondary, .bg-opacity-100;
+        }
+
+        h6 {
+            color: var(--bs-primary);
+        }
+    }
+
+    @include responsive(sm) {
+        span {
+            font-size: var(--bs-font-size-h5);
+            line-height: var(--bs-line-height-h5);
+            width: calc(var(--bs-line-height-h5) + 8px);
+            height: calc(var(--bs-line-height-h5) + 8px);
+            font-weight: 600;
+            display: inline-block;
+            padding: 5px 4px 3px;
+
+            @extend .rounded-circle, .bg-dark, .text-white, .bg-opacity-10;
+        }
+    }
+}
+
+.step-title {
+    br {
+        display: none;
+    }
+}
+
+.image-paypal {
+    max-width: 150px;
+}

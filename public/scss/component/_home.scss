@@ -1,0 +1,57 @@
+.section-banner {
+    min-height: calc(100vh - var(--bs-header));
+
+    &.section-banner-small {
+        min-height: 500px;
+    }
+
+    h5 {
+        max-width: 667px;
+
+    }
+
+    @include responsive(xxl) {
+        h5 {
+            max-width: 560px;
+        }
+    }
+
+    @include responsive(xl) {
+        h5 {
+            max-width: 500px;
+        }
+    }
+
+    @include responsive(md) {
+        figure {
+            &::after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                top: 25%;
+
+                background: #253C78;
+                background: linear-gradient(0deg, rgba(37, 60, 120, 1) 0%, rgba(37, 60, 120, 0) 100%);
+            }
+        }
+    }
+}
+
+.slider-article {
+    margin: 0px -12px;
+
+    .slide-item {
+        padding: 0px 12px;
+
+        figure {
+            padding-top: 66%;
+        }
+    }
+}
+
+.section-watch {
+    background-color: var(--bs-secondary-bg-subtle);
+}

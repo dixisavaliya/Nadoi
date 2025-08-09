@@ -1,0 +1,298 @@
+/* Fonts
+======================================================*/
+@include font-face(Montserrat, Montserrat-Thin, 100, normal);
+@include font-face(Montserrat, Montserrat-ThinItalic, 100, italic);
+
+@include font-face(Montserrat, Montserrat-ExtraLight, 200, normal);
+@include font-face(Montserrat, Montserrat-ExtraLightItalic, 200, italic);
+
+@include font-face(Montserrat, Montserrat-Light, 300, normal);
+@include font-face(Montserrat, Montserrat-LightItalic, 300, italic);
+
+@include font-face(Montserrat, Montserrat-Regular, 400, normal);
+@include font-face(Montserrat, Montserrat-Italic, 400, italic);
+
+@include font-face(Montserrat, Montserrat-Medium, 500, normal);
+@include font-face(Montserrat, Montserrat-MediumItalic, 500, italic);
+
+@include font-face(Montserrat, Montserrat-SemiBold, 600, normal);
+@include font-face(Montserrat, Montserrat-SemiBoldItalic, 600, italic);
+
+@include font-face(Montserrat, Montserrat-Bold, 700, normal);
+@include font-face(Montserrat, Montserrat-BoldItalic, 7000, italic);
+
+@include font-face(Montserrat, Montserrat-ExtraBold, 800, normal);
+@include font-face(Montserrat, Montserrat-ExtraBoldItalic, 800, italic);
+
+@include font-face(Montserrat, Montserrat-Black, 900, normal);
+@include font-face(Montserrat, Montserrat-BlackItalic, 900, italic);
+
+/* Reset CSS
+======================================================*/
+*,
+*:after,
+*:before {
+    vertical-align: top !important;
+    @include prefix(box-sizing, border-box !important);
+}
+
+html {
+    @include prefix(text-size-adjust, none);
+}
+
+body,
+html {
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: var(--bs-body-ff);
+    font-size: var(--bs-body-fs);
+    line-height: var(--bs-body-lh);
+    font-weight: var(--bs-body-fw);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &[data-bs-aside="true"] {
+        padding-left: var(--bs-aside);
+    }
+}
+
+
+figure,
+.figure {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    outline: none;
+    border: none;
+    height: auto;
+    width: 100% !important;
+    @extend .transition;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+    @extend .transition;
+}
+
+.absolute-div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+.picture {
+
+    &>img,
+    &>iframe {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.picture-contain {
+
+    &>img,
+    &>iframe {
+        object-fit: contain;
+    }
+}
+
+strong,
+b,
+label {
+    font-family: inherit;
+    font-weight: var(--bs-font-bold);
+    margin-bottom: 0px;
+}
+
+ul,
+ul li,
+ol,
+ol li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: var(--bs-font-heading);
+    font-weight: var(--bs-font-bold);
+    color: var(--bs-primary);
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+h1,
+.h1 {
+    font-size: var(--bs-font-size-h1);
+    line-height: var(--bs-line-height-h1);
+    font-weight: var(--bs-font-weight-h1);
+}
+
+h2,
+.h2 {
+    font-size: var(--bs-font-size-h2);
+    line-height: var(--bs-line-height-h2);
+    font-weight: var(--bs-font-weight-h2);
+}
+
+h3,
+.h3 {
+    font-size: var(--bs-font-size-h3);
+    line-height: var(--bs-line-height-h3);
+    font-weight: var(--bs-font-weight-h3);
+}
+
+h4,
+.h4 {
+    font-size: var(--bs-font-size-h4);
+    line-height: var(--bs-line-height-h4);
+    font-weight: var(--bs-font-weight-h4);
+}
+
+h5,
+.h5 {
+    font-size: var(--bs-font-size-h5);
+    line-height: var(--bs-line-height-h5);
+    font-weight: var(--bs-font-weight-h5);
+}
+
+h6,
+.h6 {
+    font-size: var(--bs-font-size-h6);
+    line-height: var(--bs-line-height-h6);
+    font-weight: var(--bs-font-weight-h6);
+}
+
+a,
+.a,
+a:focus,
+.a:focus,
+a:hover,
+.a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+a,
+.a {
+    @extend .transition;
+    color: var(--bs-primary);
+    display: inline-block;
+    cursor: pointer;
+}
+
+a:hover,
+.a:hover,
+.active a:not(.btn),
+.active .a:not(.btn) {
+    color: var(--bs-primary);
+}
+
+p {
+    font-size: var(--bs-body-fs);
+    line-height: var(--bs-body-lh);
+    margin: 0 0 15px;
+}
+
+p:empty {
+    display: none;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+small {
+    display: inline-block;
+    font-size: var(--bs-small-font-size);
+    line-height: var(--bs-small-line-height);
+}
+
+main {
+    display: inline-block;
+    width: 100%;
+
+    &[data-bs-header-fixed="true"] {
+        padding-top: var(--bs-header);
+    }
+}
+
+hr {
+    border-color: var(--bs-border-color);
+    opacity: 1;
+}
+
+section {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+::-moz-selection {
+    color: var(--bs-white);
+    background: var(--bs-primary);
+}
+
+::selection {
+    color: var(--bs-white);
+    background: var(--bs-primary);
+}
+
+:hover,
+:visited,
+:active,
+:focus {
+    outline: none !important;
+}
+
+:last-child:not(img):not(.icon):not(svg):not(.margin-child),
+:only-child:not(img):not(.icon):not(svg):not(.margin-child) {
+    margin-bottom: 0px !important;
+}
+
+.font-size-0 {
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}

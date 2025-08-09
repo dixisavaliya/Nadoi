@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "../../public/scss/mixins";
+@import "../../public/scss/variables";
+
+@import '~bootstrap/scss/bootstrap';
+
+@import "../../public/scss/component/base";
+@import "../../public/scss/component/root";
+
+@import "../../public/scss/component/header";
+@import "../../public/scss/component/footer";
+
+@import "../../public/scss/component/form";
+
+@import "../../public/scss/component/home";
+@import "../../public/scss/component/auth";
+
+@import "../../public/scss/component/custom";

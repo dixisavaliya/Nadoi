@@ -1,0 +1,241 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1025px,
+  xl: 1280px,
+  xxl: 1480px,
+  xxxl: 1680px,
+);
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1240px,
+  xxl: 1440px,
+);
+
+:root {
+  --bs-font: 'Montserrat';
+  --bs-font-heading: 'Montserrat';
+  --bs-font-italic: 'Montserrat';
+
+  --bs-body-ff: var(--bs-font);
+  --bs-body-fs: 16px;
+  --bs-body-lh: 24px;
+  --bs-body-fw: 400;
+
+  --bs-small-font-size: 14px;
+  --bs-small-line-height: 20px;
+
+  --bs-font-size-h1: 72px;
+  --bs-line-height-h1: 84px;
+  --bs-font-weight-h1: 600;
+  --bs-font-size-h2: 60px;
+  --bs-line-height-h2: 72px;
+  --bs-font-weight-h2: 600;
+  --bs-font-size-h3: 42px;
+  --bs-line-height-h3: 52px;
+  --bs-font-weight-h3: 600;
+  --bs-font-size-h4: 30px;
+  --bs-line-height-h4: 38px;
+  --bs-font-weight-h4: 600;
+  --bs-font-size-h5: 24px;
+  --bs-line-height-h5: 32px;
+  --bs-font-weight-h5: 400;
+  --bs-font-size-h6: 20px;
+  --bs-line-height-h6: 28px;
+  --bs-font-weight-h6: 400;
+
+  --bs-radius-xl: 20px;
+  --bs-radius-lg: 16px;
+  --bs-radius-md: 12px;
+  --bs-radius-sm: 8px;
+  --bs-radius: 4px;
+
+  --bs-font-thin: 100;
+  --bs-font-extra-light: 200;
+  --bs-font-light: 300;
+  --bs-font-regular: 400;
+  --bs-font-medium: 500;
+  --bs-font-semi-bold: 600;
+  --bs-font-bold: 700;
+  --bs-font-extra-bold: 800;
+  --bs-font-black: 900;
+
+  --transition: all .4s ease-in-out 0s;
+
+  --bs-header: 183px;
+
+  --bs-secondary-100: #faf5e7;
+  --bs-secondary-bg-subtle: #f1dfb8;
+
+  --bs-gray-100: #bcc3d7 !important;
+  --bs-gray-200: #e9ebf2 !important;
+}
+
+@include responsive(xxxl) {
+  :root {
+    --bs-font-size-h1: 60px;
+    --bs-line-height-h1: 72px;
+    --bs-font-size-h2: 48px;
+    --bs-line-height-h2: 60px;
+  }
+}
+
+@include responsive(xxl) {
+  :root {
+    --bs-font-size-h1: 48px;
+    --bs-line-height-h1: 60px;
+    --bs-font-size-h2: 42px;
+    --bs-line-height-h2: 52px;
+    --bs-font-size-h3: 30px;
+    --bs-line-height-h3: 38px;
+    --bs-font-size-h4: 24px;
+    --bs-line-height-h4: 32px;
+    --bs-font-size-h5: 20px;
+    --bs-line-height-h5: 28px;
+    --bs-font-size-h6: 20px;
+    --bs-line-height-h6: 28px;
+  }
+}
+
+@include responsive(xl) {
+  :root {
+    --bs-font-size-h1: 42px;
+    --bs-line-height-h1: 52px;
+    --bs-font-size-h2: 36px;
+    --bs-line-height-h2: 44px;
+    --bs-font-size-h3: 24px;
+    --bs-line-height-h3: 32px;
+    --bs-font-size-h4: 20px;
+    --bs-line-height-h4: 28px;
+    --bs-font-size-h5: 18px;
+    --bs-line-height-h5: 26px;
+    --bs-font-size-h6: 18px;
+    --bs-line-height-h6: 26px;
+
+    --bs-body-fs: 14px;
+    --bs-body-lh: 20px;
+
+    --bs-header: 164px;
+  }
+}
+
+@include responsive(lg) {
+  :root {
+    --bs-header: 119px;
+
+    --bs-font-size-h1: 36px;
+    --bs-line-height-h1: 44px;
+    --bs-font-size-h2: 30px;
+    --bs-line-height-h2: 38px;
+    --bs-font-size-h3: 24px;
+    --bs-line-height-h3: 32px;
+    --bs-font-size-h4: 20px;
+    --bs-line-height-h4: 28px;
+    --bs-font-size-h5: 18px;
+    --bs-line-height-h5: 26px;
+    --bs-font-size-h6: 16px;
+    --bs-line-height-h6: 24px;
+  }
+}
+
+@include responsive(md) {
+  :root {
+    --bs-small-font-size: 12px;
+    --bs-small-line-height: 18px;
+
+    --bs-header: 67px;
+  }
+}
+
+@include responsive(sm) {
+  :root {
+    --bs-font-size-h1: 32px;
+    --bs-line-height-h1: 40px;
+  }
+}
+
+$primary: #253c78 !default;
+$secondary: #d1a335 !default;
+$success: #2EB875 !default;
+$danger: #FE242E !default;
+$warning: #d1a335 !default;
+// $info: #00A082 !default;
+$light: #f3f5f7 !default;
+// $dark: #3D3D3D !default;
+$white: #FFFFFF !default;
+$black: #000000 !default;
+
+$body-bg: #FFFFFF !default;
+$body-color: #000000 !default;
+// $border-color: #F2F2F2 !default;
+
+$spacer: 16px !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer * 0.75,
+  4: $spacer * 1,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  7: $spacer * 1.75,
+  8: $spacer * 2,
+  9: $spacer * 2.25,
+  10: $spacer * 2.5,
+  11: $spacer * 2.75,
+  12: $spacer * 3,
+  15: $spacer * 3.75,
+  16: $spacer * 4,
+  20: $spacer * 5,
+  25: $spacer * 6.25) !default;
+
+$input-btn-padding-y: 10px !default;
+$input-btn-padding-x: 18px !default;
+$input-btn-font-family: var(--bs-font) !default;
+$input-btn-font-size: var(--bs-body-fs) !default;
+$input-btn-line-height: 1.5 !default;
+
+$input-btn-padding-y-sm: 16px !default;
+$input-btn-padding-x-sm: 24px !default;
+$input-btn-font-size-sm: var(--bs-body-fs) !default;
+
+$input-btn-padding-y-lg: 19px !default;
+$input-btn-padding-x-lg: 24px !default;
+$input-btn-font-size-lg: var(--bs-body-fs) !default;
+
+$input-btn-border-width: 2px !default;
+
+$btn-padding-y: $input-btn-padding-y !default;
+$btn-padding-x: $input-btn-padding-x !default;
+$btn-font-family: $input-btn-font-family !default;
+$btn-font-size: $input-btn-font-size !default;
+$btn-line-height: $input-btn-line-height !default;
+
+$btn-padding-y-sm: $input-btn-padding-y-sm !default;
+$btn-padding-x-sm: $input-btn-padding-x-sm !default;
+$btn-font-size-sm: $input-btn-font-size-sm !default;
+
+$btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$btn-padding-x-lg: $input-btn-padding-x-lg !default;
+$btn-font-size-lg: $input-btn-font-size-lg !default;
+
+$btn-border-width: $input-btn-border-width !default;
+
+$btn-font-weight: 600 !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: var(--bs-radius-sm) !default;
+$btn-border-radius-sm: var(--bs-radius-md) !default;
+$btn-border-radius-lg: var(--bs-radius-md) !default;
+
+$input-border-radius: var(--bs-radius-sm) !default;
+$input-border-radius-sm: var(--bs-radius-md) !default;
+$input-border-radius-lg: var(--bs-radius-md) !default;
+
+$form-check-input-width: 1em !default;
+$form-check-padding-start: $form-check-input-width + 0.75em !default;
+$form-check-input-checked-bg-color: $black !default;
